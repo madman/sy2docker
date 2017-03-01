@@ -1,0 +1,50 @@
+nginx:
+  build: ./docker/nginx
+  ports:
+    - "8080:80"
+  links:
+    - php
+  volumes_from:
+    - files
+  volumes:
+    - ./var/logs/nginx/:/var/log/nginx
+
+php:
+  build: ./docker/php
+  volumes_from:
+    - files
+  links:
+    - mysql
+  privileged: true
+
+composer:
+  build: ./docker/composer
+  volumes_from: 
+    - files
+  environment:    
+    - SECRET=sy2docker
+
+
+console:
+  build: ./docker/console
+  volumes_from: 
+    - files
+  links:
+    - mysql
+
+mysql:
+  image: mysql:5.5
+  environment:
+    - MYSQL_ROOT_PASSWORD=sy2docker
+    - MYSQL_DATABASE=sy2docker
+    - MYSQL_USER=sy2docker
+    - MYSQL_PASSWORD=sy2docker
+  volumes:
+    - ./var/data/db:/data/db
+    - ./var/data/dumps:/docker-entrypoint-initdb.d
+
+files:
+  image: alpine:latest
+  volumes:
+    - .:/data/www/site
+  command: /bin/ash
