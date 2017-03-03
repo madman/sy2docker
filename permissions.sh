@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo chmod -R o+w app/config/parameters.yml &&
+sudo chmod -R o+w var &&
 sudo chmod -R o+w var &&
 sudo chmod -R o+w bin &&
 sudo chmod -R o+w vendor &&
