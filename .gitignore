@@ -15,4 +15,5 @@
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+!/vendor/.gitkeep
 /web/bundles/
