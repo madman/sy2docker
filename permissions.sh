@@ -1,8 +1,6 @@
 #!/bin/bash
 
-sudo chmod -R o+w var/cache &&
-sudo chmod -R o+w var/logs &&
-sudo chmod -R o+w var/sessions &&
+sudo chmod -R o+w var &&
 sudo chmod -R o+w bin &&
 sudo chmod -R o+w vendor &&
 sudo chmod -R o+w web
