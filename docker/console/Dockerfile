@@ -53,11 +53,13 @@ WORKDIR /data/www/site/bin
 
 RUN set -x \
 	&& addgroup -g 82 -S www-data \
-	&& adduser -u 1001 -D -S -G www-data www-data
+	&& adduser -u 82 -D -S -G www-data www-data
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh 
 RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
+
+USER www-data
 
 CMD ["-"]
 ENTRYPOINT ["/entrypoint.sh"]
