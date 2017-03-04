@@ -1,69 +1,59 @@
-Symfony Standard Edition
+Symfony Docker Edition
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+Ідея проекту - запустити [Symfony][1], при цьому не захламити ніякими пакетами власний комп'ютер. Все, що необхідно - це git, docker та docker-compose.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
-What's inside?
+Встановлення та запуск
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+  * Встановлюємо [Docker][2]
 
-  * An AppBundle you can use to start coding;
+  * Встановлюємо [Docker Compose][3]
 
-  * Twig as the only configured template engine;
+  * Клонуємо репозиторій
 
-  * Doctrine ORM/DBAL;
+    $ git clone git@github.com:madman/sy2docker.git
+  
+  * Виставляємо необхідні права на папки та файли
 
-  * Swiftmailer;
+    $ ./permissions.sh
 
-  * Annotations enabled for everything.
+  * Збираємо образи для docker
 
-It comes pre-configured with the following bundles:
+    $ docker-compose build
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+  * Запускаємо контейнери
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+    $ docker-compose up -d
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+  * Встановлюємо залежності
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+    $ docker-compose run composer install 
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+  * Відкриваємо в браузері http://localhost:8080/
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+Які є контенери?
+--------------
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+  * nginx - 1.10.1
+  * php - php-fpm (версія php 5.6.30)
+  * mysql - версия 5.5
+  * composer - сервіс для роботи з композером
+  * console - консоль symfony
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
+Відмінність від [Symfony Standard Edition][4]
+--------------
 
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
+  * видалений пакет SwiftmailerBundle
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+  * видалений пакет incenteev/composer-parameter-handler. Налаштування відбувається автоматично
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+Все програмне забезпечення в Symfony Docker Edition розповсюджується під MIT або BSD ліцензіями
 
-Enjoy!
+Насолоджуйтесь!
 
 [1]:  https://symfony.com/doc/3.2/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.2/doctrine.html
-[8]:  https://symfony.com/doc/3.2/templating.html
-[9]:  https://symfony.com/doc/3.2/security.html
-[10]: https://symfony.com/doc/3.2/email.html
-[11]: https://symfony.com/doc/3.2/logging.html
-[12]: https://symfony.com/doc/3.2/assetic/asset_management.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+[2]:  https://docs.docker.com/engine/installation/
+[3]:  https://docs.docker.com/compose/install/
+[4]:  https://github.com/symfony/symfony-standard
