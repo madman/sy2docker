@@ -41,7 +41,7 @@ $ docker-compose run composer install
 Відкриваємо в браузері http://localhost:8080/
 
 
-Які є контенери?
+Які є контейнери?
 --------------
 
   * nginx - 1.10.1
