@@ -6,31 +6,39 @@ Symfony Docker Edition
 Встановлення та запуск
 --------------
 
-  * Встановлюємо [Docker][2]
+Встановлюємо [Docker][2] та [Docker Compose][3]
 
-  * Встановлюємо [Docker Compose][3]
+Клонуємо репозиторій
 
-  * Клонуємо репозиторій
-
-    $ git clone git@github.com:madman/sy2docker.git
+```bash
+$ git clone git@github.com:madman/sy2docker.git
+```
   
-  * Виставляємо необхідні права на папки та файли
+Виставляємо необхідні права на папки та файли
 
-    $ ./permissions.sh
+```bash
+$ ./permissions.sh
+```
 
-  * Збираємо образи для docker
+Збираємо образи для docker
 
-    $ docker-compose build
+```bash
+$ docker-compose build
+```
 
-  * Запускаємо контейнери
+Запускаємо контейнери
 
-    $ docker-compose up -d
+```bash
+$ docker-compose up -d
+```
 
-  * Встановлюємо залежності
+Встановлюємо залежності
 
-    $ docker-compose run composer install 
+```bash
+$ docker-compose run composer install 
+```
 
-  * Відкриваємо в браузері http://localhost:8080/
+Відкриваємо в браузері http://localhost:8080/
 
 
 Які є контенери?
