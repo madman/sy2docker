@@ -13,6 +13,12 @@ Symfony Docker Edition
 ```bash
 $ git clone git@github.com:madman/sy2docker.git
 ```
+
+або 
+
+```bash
+composer create-project --no-install --no-scripts madman/sy2docker
+```
   
 Виставляємо необхідні права на папки та файли
 
