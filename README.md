@@ -44,7 +44,7 @@ $ docker-compose up -d
 $ docker-compose run composer install 
 ```
 
-Відкриваємо в браузері http://localhost:8080/
+Відкриваємо в браузері [http://localhost:8080/](http://localhost:8080/)
 
 
 Які є контейнери?
