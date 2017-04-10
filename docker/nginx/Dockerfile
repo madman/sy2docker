@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:latest
 
 MAINTAINER Yuriy Prokopets <yuriy.prokopets@gmail.com>
 
@@ -8,7 +8,7 @@ RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
 ADD nginx.conf /etc/nginx/
 ADD site.conf /etc/nginx/conf.d/
 
-RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
+RUN echo "upstream php-upstream { server fpm:9000; }" > /etc/nginx/conf.d/upstream.conf
 
 RUN adduser -D -g '' -G www-data www-data
 

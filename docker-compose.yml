@@ -3,30 +3,33 @@ nginx:
   ports:
     - "8080:80"
   links:
-    - php
+    - fpm
   volumes_from:
     - files
   volumes:
     - ./var/logs/nginx/:/var/log/nginx
 
-php:
-  build: ./docker/php
+fpm:
+  build: ./docker/fpm
+  environment:
+    - SYMFONY_ENV=dev  
   volumes_from:
     - files
   links:
     - mysql
-  privileged: true
 
 composer:
   build: ./docker/composer
+  environment:
+    - SYMFONY_ENV=dev  
+    - SECRET=sy2docker
   volumes_from: 
     - files
-  environment:    
-    - SECRET=sy2docker
-
 
 console:
   build: ./docker/console
+  environment:
+    - SYMFONY_ENV=dev
   volumes_from: 
     - files
   links:
@@ -44,7 +47,7 @@ mysql:
     - ./var/data/dumps:/docker-entrypoint-initdb.d
 
 files:
-  image: alpine:latest
+  image: alpine:3.4
   volumes:
     - .:/data/www/site
   command: /bin/ash
