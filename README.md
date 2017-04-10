@@ -51,7 +51,7 @@ $ docker-compose run composer install
 --------------
 
   * nginx - 1.10.1
-  * php - php-fpm (версія php 5.6.30)
+  * fpm - php-fpm (версія php 5.6.30)
   * mysql - версия 5.5
   * composer - сервіс для роботи з композером
   * console - консоль symfony
