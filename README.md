@@ -23,7 +23,7 @@ composer create-project --no-install --no-scripts madman/sy2docker
 Виставляємо необхідні права на папки та файли
 
 ```bash
-$ ./permissions.sh
+$ bin/init
 ```
 
 Збираємо образи для docker

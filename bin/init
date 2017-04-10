@@ -1,0 +1,9 @@
+#!/bin/bash
+
+chmod o+w app/config/parameters.yml
+chmod -R o+w var
+chmod -R o+w bin
+chmod -R o+w vendor
+chmod -R o+w web
+chmod o+w composer.json
+chmod o+w composer.lock
