@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER Yuriy Prokopets <yuriy.prokopets@gmail.com>
+LABEL maintainer "Yuriy Prokopets <yuriy.prokopets@gmail.com>"
 
 RUN apk add --update nginx
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*

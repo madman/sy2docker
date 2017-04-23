@@ -1,7 +1,7 @@
 FROM alpine:3.4
 #see https://github.com/RobLoach/docker-composer/blob/master/base/php5-alpine/Dockerfile
 
-MAINTAINER Yuriy Prokopets <yuriy.prokopets@gmail.com>
+LABEL maintainer "Yuriy Prokopets <yuriy.prokopets@gmail.com>"
 
 # Environments
 ENV TIMEZONE            Europe/Kiev
