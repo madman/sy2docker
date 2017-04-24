@@ -63,7 +63,7 @@ What differs from [Symfony Standard Edition][4]?
 ------------------------------------------------
 
   * removed SwiftmailerBundle package
-  * removed incenteev/composer-parameter-handler. All thing are configured automatically.
+  * removed incenteev/composer-parameter-handler. All things are configured automatically.
 
 Licensing
 ---------
